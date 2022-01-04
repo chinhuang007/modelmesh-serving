@@ -42,8 +42,8 @@ run_fvt() {
   export KUBECONFIG=~/.kube/config
 
   rm -rf /usr/local/go
-  wget https://go.dev/dl/go1.15.15.linux-amd64.tar.gz
-  tar -C /usr/local -xzf go1.15.15.linux-amd64.tar.gz
+  wget https://go.dev/dl/go1.16.12.linux-amd64.tar.gz
+  tar -C /usr/local -xzf go1.16.12.linux-amd64.tar.gz
 
   go version  
   go test -v ./fvt -ginkgo.v -ginkgo.progress -test.timeout 40m > fvt.out
