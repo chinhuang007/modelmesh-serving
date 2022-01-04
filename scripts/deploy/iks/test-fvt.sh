@@ -40,7 +40,8 @@ run_fvt() {
   echo " =====   run standard fvt   ====="
   kubectl get all -n "$SERVING_NS"
   export KUBECONFIG=~/.kube/config
-    
+
+  go version  
   go test -v ./fvt -ginkgo.v -ginkgo.progress -test.timeout 40m > fvt.out
   cat fvt.out
   RUN_STATUS=$(cat fvt.out | awk '{ print $1}' | grep PASS)
